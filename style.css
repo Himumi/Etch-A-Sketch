@@ -4,8 +4,23 @@
     box-sizing: border-box;
 }
 
+h1{
+    margin: 20px 0;
+    text-align: center;
+}
+
+#buttons{
+    text-align: center;
+    margin: 50px 0;
+}
+
+button{
+    height: 32px;
+    width: 64px;
+}
+
 #container{
-    margin: 200px auto;
+    margin: 100px auto;
     border: 1px solid red;
     height: 500px;
     width: 500px;
