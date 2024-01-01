@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    margin: 200px auto;
+    border: 1px solid red;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    flex: 1;
+    display: flex;
+}
+
+.item{
+    flex: 1;
+}
+
+.item:hover{
+    background-color: black;
+}
