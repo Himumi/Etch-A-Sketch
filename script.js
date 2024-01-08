@@ -17,8 +17,16 @@ function grid(e) {
     divs.forEach(div => {
         div.addEventListener('mouseover', () =>{
             div.classList.add('black');
-        }); 
-    });
+
+            const blackDivs = document.querySelectorAll('.black');
+            blackDivs.forEach(blackDiv => {
+                let currentOpacity = Number(blackDiv.style.opacity);
+                blackDiv.addEventListener('mouseout', () => {
+                    if (currentOpacity < 1) blackDiv.style.opacity = currentOpacity + 0.1;
+                });
+            });
+            });       
+        });
 }
 
 function changeGrid(value) {
