@@ -21,25 +21,38 @@ function grid(e) {
     });
 }
 
-grid(16);
-
-const gridButton = document.querySelector('#grid');
-function askInput() {
-    return +prompt("Please input number for grid(1 - 100).");
-}
-gridButton.addEventListener('click', () => {
-    let input = askInput();
-    while (input === 0 || input > 100) {
-        alert('you should enter number 0-100.');
-        input = askInput();
-    }
+function changeGrid(value) {
     const rows = document.querySelectorAll('.row');
     rows.forEach(row => {
         container.removeChild(row);
     });
-    grid(input);
+    grid(value);
     const divs = document.querySelectorAll('.item');
     divs.forEach(div => {
         div.classList.remove('black');
     });
+}
+
+function askInput() {
+    return +prompt("Please input number for grid(1 - 100).");
+}
+
+// Make a default grid
+grid(16);
+
+const resetButton = document.querySelector('#reset');
+const gridButton = document.querySelector('#grid');
+
+gridButton.addEventListener('click', () => {
+    let input = askInput();
+    while (input < 1 || input > 100) {
+        alert('you should enter a number around 0-100.');
+        input = askInput();
+    }
+    changeGrid(input);
+
+});
+
+resetButton.addEventListener('click', () => {
+    changeGrid(16);
 });
