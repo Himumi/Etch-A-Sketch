@@ -24,9 +24,15 @@ function grid(e) {
 grid(16);
 
 const gridButton = document.querySelector('#grid');
-
+function askInput() {
+    return +prompt("Please input number for grid(1 - 100).");
+}
 gridButton.addEventListener('click', () => {
-    let input = +prompt("Please input number for grid(1 - 100).");
+    let input = askInput();
+    while (input === 0 || input > 100) {
+        alert('you should enter number 0-100.');
+        input = askInput();
+    }
     const rows = document.querySelectorAll('.row');
     rows.forEach(row => {
         container.removeChild(row);
